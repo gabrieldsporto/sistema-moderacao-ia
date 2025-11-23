@@ -90,21 +90,34 @@ os.environ["GOOGLE_API_KEY"] = "SUA_CHAVE_AQUI"</code></pre>
 
 <hr>
 
-<h2>🧪 Exemplos de Teste</h2>
+<hr>
 
-<h3>Cenário 1: Bloqueio Rápido (Sem gasto de IA)</h3>
+<h2>🧪 Exemplos de Execução</h2>
+
+<h3>Cenário 1: Bloqueio Rápido (Camada Python)</h3>
+<p>O filtro determinístico barra palavras proibidas instantaneamente, sem gastar tokens da IA.</p>
 <blockquote>
   <p><strong>Input:</strong> "Seu sistema é um lixo, me dá dinheiro."</p>
-  <p><strong>Output:</strong> ❌ BLOQUEADO: Linguagem ofensiva detectada.</p>
+  <p><strong>Output:</strong> ❌ BLOQUEIO AUTOMÁTICO: Linguagem ofensiva ou suspeita detectada.</p>
 </blockquote>
 
-<h3>Cenário 2: Fluxo Completo com Aprovação</h3>
+<h3>Cenário 2: Fluxo Completo (Auditoria IA + Decisão Humana)</h3>
+<p>O sistema identifica o alto risco financeiro e o gestor decide <strong>bloquear</strong> a operação.</p>
 <blockquote>
-  <p><strong>Input:</strong> "Transferir 50 reais para fornecedor X."</p>
-  <p><strong>IA:</strong> "Análise segura. Aguardando confirmação."</p>
-  <p><strong>Sistema:</strong> 🛑 PAUSA. Revisor IA disse: Sim. Autoriza? (s/n)</p>
-  <p><strong>Humano:</strong> "s"</p>
-  <p><strong>Resultado:</strong> ✅ Operação Concluída!</p>
+  <p><strong>Input:</strong> "Gostaria de transferir 50 mil reais para fornecedor novo"</p>
+  <p><strong>--- 🏦 INICIANDO AUDITORIA DE TRANSAÇÃO ---</strong></p>
+  <p><strong>[Sistema]:</strong> 🛑 PAUSA DE SEGURANÇA: ALERTA DE COMPLIANCE</p>
+  <p><strong>📋 Parecer Técnico:</strong> "ALTO RISCO. Fornecedor desconhecido e valor expressivo (>10k). Possível fraude."</p>
+  <p><strong>⚖️ Compliance:</strong> "Operação retida. Requer validação manual obrigatória."</p>
+  <br>
+  <p><strong>PAINEL DE DECISÃO DO GESTOR:</strong></p>
+  <ul>
+      <li>[A] APROVAR (Assumir Risco)</li>
+      <li>[R] REJEITAR (Seguir Compliance)</li>
+      <li>[E] EDITAR/JUSTIFICAR (Inserir Override)</li>
+  </ul>
+  <p><strong>➡️ Decisão do Gestor:</strong> "R"</p>
+  <p><strong>Resultado:</strong> 🚫 Transação REJEITADA pelo Gestor.</p>
 </blockquote>
 
 <hr>
